@@ -1,0 +1,509 @@
+@import url("reset.css");
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans|Oswald);
+
+/*
+ *	font-family: 'Droid Sans', sans-serif; 
+ *	font-family: 'Oswald', sans-serif;
+ */
+
+/* Generic elements */
+body { font: 0.938em/1.25em 'Droid Sans', Arial, Helvetica, sans-serif; background: #3f4347  color: #252525; height: 100% }
+html { height: 100% }
+p { text-align: left; margin-bottom: 11px;line-height: 19px }
+p.browseHappy { text-align: center; padding: 11px; font-size: 1.3em; color: white; background-color: #707070 }
+p.browseHappy > a { color: #39b54a; }
+p.browseHappy > a:hover { text-decoration: underline; }
+
+img {  }
+
+a,:link,:visited { color: #3C8F5B; ; text-decoration: none; font-size: 1em; } 
+a:hover,a.important,a.on { color: #3C8F5B; text-decoration: underline;  }
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 { margin-bottom: .3em; font-weight: normal; line-height: normal; color: #f7941d; }
+
+h1 { font-size: 200%; }
+h2 { font-size: 150%; text-align: center; }
+h3 { font-size: 130%; }
+h4 { font-size: 130%; }
+h5 { font-size: 110%; }
+h6 { font-size: 100%; }
+
+/* Body radial background */
+body {
+ 	background: #7daec0; 
+	background: -moz-radial-gradient(center, ellipse cover,  #7daec0 0%, #457081 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7daec0), color-stop(100%,#457081)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #7daec0 0%,#457081 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #7daec0 0%,#457081 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #7daec0 0%,#457081 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #7daec0 0%,#457081 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7daec0', endColorstr='#457081',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/***************
+ * Main styles *
+ ***************/
+.mainWrapper {
+	text-align: center;
+	padding: 90px 0 0;
+	margin: 0 auto 0;
+	width: 410px;
+}
+.logo {
+	font: 400 2.333em/42px 'Oswald', sans-serif;
+	text-shadow: 3px 2px 0px #164354;
+	margin-bottom: 22px;
+	color: #fff;	
+}
+.logo::selection {
+	background: #33373a;
+	color: #fff
+}
+.logo::-moz-selection {
+	background: #33373a;
+	color: #fff
+}
+
+/******************
+ * Options styles *
+ ******************/
+ .page {
+	-webkit-border-radius: 5px 5px;
+	border-radius: 5px 5px;
+	background: #AFC7D0;
+	border: 1px solid #5E7781;
+	width: 338px;
+	position: relative;
+	padding: 30px 35px;
+ }
+
+/******************
+ * Options styles *
+ ******************/
+.options ul li {
+	margin-left: 9px;
+	float: left;
+	-webkit- perspective: 1000px;
+	perspective: 1000px;
+}
+.options ul li a {
+	background: url(https://s.cdpn.io/2542/sprite.png) no-repeat 0 -999em;
+	position: relative;
+	display: block;
+	height: 23px;
+	width: 23px;
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	-o-perspective: 800px;
+	perspective: 800px;
+}
+/**** option icons ****/
+.options ul li.settings a {
+	background-position: -64px -3px;
+}
+.options ul li.settings a:hover,
+.options ul li.settings a.active {
+	background-position: -64px -33px;
+}
+.options ul li.recycle a {
+	background-position: -94px -3px;
+}
+.options ul li.recycle a:hover,
+.options ul li.recycle a.active {
+	background-position: -94px -33px;
+}
+.options ul li.strength a {
+	background-position: -124px -3px;
+}
+.options ul li.strength a:hover,
+.options ul li.strength a.active {
+	background-position: -124px -33px;
+}
+.options ul li a:hover {
+	text-decoration: none;
+}
+/**** css tooltips ****/
+.options ul li a span {
+	font: 400 0.933em/1em 'Oswald', sans-serif;
+	background: #33373a;
+	background: rgba(51, 55, 58, 1);
+	text-transform: uppercase;
+	white-space: nowrap;
+	padding: 11px 13px;
+	position: absolute;
+	opacity: 0;
+	top: 40px;
+	color: #fff;
+
+	-webkit-transform: rotateX(271deg);
+	-moz-transform: rotateX(271deg);
+	-o-transform: rotateX(271deg);
+	transform: rotateX(271deg);
+	-webkit-transform-origin: 100% -30%;
+	-moz-transform-origin: 100% -30%;
+	-o-transform-origin: 100% -30%;
+	transform-origin: 100% -30%;
+	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.options ul li a span:after {
+	border-color: transparent transparent rgba(51, 55, 58, 1) transparent;
+    content: "";
+    position: absolute;
+    top: -20px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-width: 10px;
+    border-style: solid;
+}
+.options ul li.settings a span {
+	left: -32px;
+}
+.options ul li.settings a span:after {
+    left: 33px;
+}
+.options ul li.recycle a span {
+	left: -29px;
+}
+.options ul li.recycle span:after {
+    left: 29px;
+}
+.options ul li.strength a span {
+	left: -45px;
+}
+.options ul li.strength span:after {
+    left: 45px;
+}
+
+/*** tooltip animations ***/
+
+.options ul li a:hover span {
+	opacity: 1;
+	-webkit-transform: rotateX(360deg);
+	-moz-transform: rotateX(360deg);
+	-o-transform: rotateX(360deg);
+	transform: rotateX(360deg);
+}
+
+.options ul li a:hover span:after {
+	opacity: 1;
+}
+
+
+
+/***************
+ * form styles *
+ ***************/
+input[type=checkbox] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+label {
+	position: relative;
+	padding-left: 40px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+label:after {
+	content: "";
+	display: block;
+	background: #5b636a url(https://s.cdpn.io/2542/sprite.png) no-repeat -4px -4px;
+	height: 22px;
+	width: 22px;
+	position: absolute;
+	top: -3px;
+	left: 0;
+	cursor: pointer;
+}
+
+input[type=checkbox]:checked ~ label:after {
+   background-position: -34px -4px;
+}
+
+input{
+	border: 2px solid #33373A;
+	padding: 7px 5px 7px 13px;
+	background: white;
+	height: 16px;
+	width: 208px;
+	margin: 0;
+	float: left;
+}
+::-webkit-input-placeholder {
+   font: 400 1.067em/1em 'Droid Sans', sans-serif; 
+   color: #3f4347;
+   font-size: 1em;
+}
+:-moz-placeholder {
+   font: 400 1.067em/1em 'Droid Sans', sans-serif; 
+   color: #3f4347;
+   font-size: 1em;  
+}
+.password label {
+	display: none;
+}
+#results {
+	float: left;
+}
+#submit {
+	font: 400 1.067em/1em 'Oswald', sans-serif;
+	background: #33373a;
+	background: rgba(51, 55, 58, 1);
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	padding: 0;
+	float: right;
+	border: none;
+	color: #fff;
+	height: 34px;
+	width: 93px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+#submit:hover {
+	background: rgba(21, 55, 58, 0.6);
+	text-shadow: 3px 2px 0px #164354;
+}
+
+/*************************
+ * form container styles *
+ *************************/
+#generator {
+ 	margin-bottom: 10px;
+}
+#generator .box {
+	background: #afc7d0;
+	border: 1px solid #5e7781;
+	width: 338px;
+	height: 18px;
+	position: relative;
+	padding: 12px 35px;
+	overflow: hidden;
+	text-align: left;
+}
+
+#generator .boxB {
+	border-bottom: none;
+}
+
+#generator .boxGroup,
+#generator .boxGroupB {
+	position: relative;
+	height: 0px;
+	overflow: hidden;
+	-webkit-transition: height 1.05s linear;
+	-moz-transition: height 1.05s linear;
+	-o-transition: height 1.05s linear;
+	transition: height 1.05s linear;
+	
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	-o-perspective: 800px;
+	perspective: 800px;
+}
+#generator .boxGroup> .box:hover {
+	background-color: #cad3d6;
+}
+#generator .boxGroup > .box { 
+	position: absolute;
+}
+#generator .boxGroup > .even { 
+	top: 0px;
+}
+#generator .boxGroup > .odd { 
+	bottom: 0px;
+}
+#generator .password {
+ 	padding-bottom: 15px;
+ 	padding-top: 30px;
+ 	border-bottom: none;
+ 	height: 35px;
+ 	-webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+#generator .counter input {
+	border: none;
+	background: none;
+	padding: 0;
+	width: 32px;
+	text-align: center;
+	height: 21px;
+	float: left;
+
+}
+#generator .counter label:after {
+	display: none;
+}
+#generator .counter label {
+	padding: 2px 0 0 16px;
+	float: left;
+}
+#generator .counter .minus,
+#generator .counter .plus {
+	background: #5b636a;
+	font-size: 2.333em;
+	font-family:'Oswald', sans-serif;
+	height: 21px;
+	width: 21px;
+	display: block;
+	float: left;
+	line-height: 12px;
+	text-align: center;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#generator .counter .minus {
+	color: #ee1c24;
+	line-height: 10px;
+}
+#generator .counter .plus {
+	color: #39b54a;
+}
+#generator.openStrength .box.last {
+ 	/*border-bottom: 1px solid #5e7781;*/
+}
+#generator .box.last {
+ 	height: 15px;
+ 	width: 408px;
+ 	padding: 0;
+ 	border-top: none;
+ 	-webkit-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+#generator.openSettings .box.last {
+ 	border-top: 1px solid #5e7781;
+}
+#generator.openStrength .box.last {
+ 	border-top: none;
+}
+
+/* Set the options to close state */
+
+#generator .even {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+
+	-webkit-transform: rotateX(-90deg);
+	-webkit-transform-origin:  center top;
+	-webkit-transition: -webkit-transform 1.5s ease;
+
+	-moz-transform: rotateX(-90deg);
+	-moz-transform-origin:  center top;
+	-moz-transition: -moz-transform 1.5s ease;
+
+	-o-transform: rotateX(-90deg);
+	-o-transform-origin:  center top;
+	-o-transition: -o-transform 1.5s ease;
+
+	transform: rotateX(-90deg);
+	transform-origin:  center top;
+	transition: transform 1.5s ease;
+}
+#generator .odd,
+#generator .boxGroupB .strength {
+	background: #97a7ad;
+
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+
+	-webkit-transform: rotateX(90deg);
+	-webkit-transform-origin: center bottom;
+	-webkit-transition: -webkit-transform 1.5s ease, background 1.5s ease;
+
+	-moz-transform: rotateX(90deg);
+	-moz-transform-origin: center bottom;
+	-moz-transition: -moz-transform 1.5s ease, background 1.5s ease;
+
+	-o-transform: rotateX(90deg);
+	-o-transform-origin: center bottom;
+	-o-transition: -o-transform 1.5s ease, background 1.5s ease;
+
+	transform: rotateX(90deg);
+	transform-origin: center bottom;
+	transition: transform 1.5s ease, background 1.5s ease;
+}
+
+/* begin transistions */
+
+#generator.openSettings .boxGroup .even,
+#generator.openSettings .boxGroup .odd,
+#generator.openStrength .strength {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+#generator.openSettings .boxGroup .odd {
+	background: #afc7d0;
+}
+
+#generator.openSettings .boxGroup {
+	height: 86px;
+	-webkit-transition: height 1.05s ease;
+	-moz-transition: height 1.05s ease;
+	-o-transition: height 1.05s ease;
+	transition: height 1.05s ease;
+}
+#generator.openSettings .boxGroup.last {
+	height: 43px;
+	-webkit-transition: height 1.05s ease;
+	-moz-transition: height 1.05s ease;
+	-o-transition: height 1.05s ease;
+	transition: height 1.05s ease;
+}
+
+/***************
+ * Strenth styles *
+ ***************/
+#generator .strength {
+	position: absolute;
+	bottom: 0;
+}
+
+#generator .strength #test {
+	padding: 3px 0 2px 177px;
+	background: url(https://s.cdpn.io/2542/sprite.png) no-repeat 0 -999em;
+}
+#generator .strength #test.perfect {
+	background-position: 0px -185px	
+}
+#generator .strength #test.good {
+	background-position: 0px -155px
+}
+#generator .strength #test.inbetween {
+	background-position: 0px -125px
+}
+#generator .strength #test.bad {
+	background-position: 0px -95px
+}
+#generator .strength #test.krap {
+	background-position: 0px -65px
+}
+#generator.openStrength .strength {
+	background: #afc7d0;
+	border-top: 1px solid #5e7781;
+	border-bottom: 1px solid #5e7781;
+}
+#generator.openStrength .boxGroupB {
+	height: 44px;
+}

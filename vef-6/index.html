@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - LongLongLongDog</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <div class="content" :style="{ minWidth: screenWidth + 'px'}">
+    <div class="arrow"></div>
+    <div class="text">
+      <p>Scroll Right or Shift +</p>
+      <div class="mouse-cursor"></div>
+    </div>
+    <div class="margin" :style="{ width: dogWidth + 'px', left: marginLeft + 'px' }">
+      <div class="dog" :style="{ minWidth: 70 + 'px', width: dogWidth + 'px', left: dogPosition + 'px' }">
+        <div class="balloon" :style="{ left: -dogPosition + 100 + 'px' }">
+          <div class="div">{{ this.dogWidth >= 70 ? Math.floor(this.dogWidth - 70) : 0 }}</div>
+        </div>
+        <div class="dog__front">
+          <div class="dog__front-body">
+            <div class="dog__face"></div>
+            <div class="dog__eye"></div>
+          </div>
+          <div class="dog__foot" :class="{ active: scrollX &gt; dogWidth }"></div>
+          <div class="dog__foot" :class="{ active: scrollX &gt; dogWidth }"></div>
+        </div>
+        <div class="dog__back">
+          <div class="dog__back-body"></div>
+          <div class="dog__foot" :class="{ active: scrollX &gt; dogWidth }"></div>
+          <div class="dog__foot" :class="{ active: scrollX &gt; dogWidth }"></div>
+          <div class="dog__tail"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

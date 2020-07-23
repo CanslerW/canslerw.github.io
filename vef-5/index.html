@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru" >
+<head>
+  <meta charset="UTF-8">
+  <title>Вариация #5 - Spider</title>
+  <link href="icon.ico" rel="icon" type="images/x-icon">
+  <script>
+window.requestAnimFrame = (function() {
+  return (
+    window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function(callback) {
+      window.setTimeout(callback);
+    }
+  );
+});
+
+function init(elemid) {
+  let canvas = document.getElementById(elemid),
+    c = canvas.getContext("2d"),
+    w = (canvas.width = window.innerWidth),
+    h = (canvas.height = window.innerHeight);
+  c.fillStyle = "rgba(30,30,30,1)";
+  c.fillRect(0, 0, w, h);
+  return {c:c,canvas:canvas};
+}
+</script><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas id="canvas"></canvas>
+<!-- partial -->
+  <script  src="./script.js"></script>
+<script language='JavaScript1.2'>
+<!--
+if (window.Event)
+document.captureEvents(Event.MOUSEUP);
+ 
+function nocontextmenu() {
+event.cancelBubble = true, event.returnValue = false;
+ 
+return false;
+}
+ 
+function norightclick(e) {
+if (window.Event) {
+if (e.which == 2 || e.which == 3) return false;
+}
+else if (event.button == 2 || event.button == 3) {
+event.cancelBubble = true, event.returnValue = false;
+return false;
+}
+}
+ 
+if (document.layers)
+document.captureEvents(Event.MOUSEDOWN);
+ 
+document.oncontextmenu = nocontextmenu;
+document.onmousedown = norightclick;
+document.onmouseup = norightclick;
+//--> </script>
+</body>
+</html>

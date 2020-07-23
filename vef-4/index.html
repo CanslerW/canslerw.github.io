@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Вариация #4 - Pimples</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" type="images/x-icon" href="icon.ico">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas id="canvas"></canvas>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script><script  src="./script.js"></script>
+<script language='JavaScript1.2'>
+<!--
+if (window.Event)
+document.captureEvents(Event.MOUSEUP);
+ 
+function nocontextmenu() {
+event.cancelBubble = true, event.returnValue = false;
+ 
+return false;
+}
+ 
+function norightclick(e) {
+if (window.Event) {
+if (e.which == 2 || e.which == 3) return false;
+}
+else if (event.button == 2 || event.button == 3) {
+event.cancelBubble = true, event.returnValue = false;
+return false;
+}
+}
+ 
+if (document.layers)
+document.captureEvents(Event.MOUSEDOWN);
+ 
+document.oncontextmenu = nocontextmenu;
+document.onmousedown = norightclick;
+document.onmouseup = norightclick;
+//--> </script>
+</body>
+</html>
