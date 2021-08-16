@@ -1,0 +1,31 @@
+#EXTM3U
+#EXTINF: -1, Русский роман HD
+http://188.113.190.12/221/video.m3u8
+#EXTINF: -1, Русский Детектив
+http://s06.iptvx.tv:8090/s/bac69166/russkij-detektiv.m3u8
+#EXTINF: -1, Русский Иллюзион HD
+http://s06.iptvx.tv:8090/s/bac69166/russkij-iluzion-hd.m3u8
+#EXTINF: -1, Россия 24 HD
+http://cdnmg.secure.live.rtr-vesti.ru/hls/russia_24/playlist_3.m3u8
+#EXTINF: -1, Россия 1 HD
+http://cdnmg.secure.live.rtr-vesti.ru/hls/russia_hd/playlist_4.m3u8
+#EXTINF: -1, Россия РТР
+http://cdnmg.secure.live.rtr-vesti.ru/live/smil:rtrp.smil/playlist_3.m3u8
+#EXTINF: -1, Первый канал
+http://iptv.ktkru.ru:8001/index.m3u8
+#EXTINF: -1, Звезда HD
+http://s06.iptvx.tv:8090/s/bac69166/zvezda-hd.m3u8
+#EXTINF: -1, Дом Кино Премиум HD
+https://sc.id-tv.kz/domkino_hd_38_39.m3u8
+#EXTINF: -1, Дом Кино 
+http://118.47.168.157:8080/play/a012/index.m3u8
+#EXTINF: -1, Моя Планета
+http://a3569456481-s26881.cdn.ngenix.net/live/smil:mplan.smil/chunklist_b1600000.m3u8
+#EXTINF: -1, Моя Планета HD
+http://edge05.beetv.kz/btv/SWM/PlanetaHD/PlanetaHD_1080p_5000kbps.m3u8
+#EXTINF: -1, ТНТ
+http://87.248.248.10:81/udp/239.239.2.8:5239
+#EXTINF: -1, TV1000 Русское кино HD
+https://okkotv-live.cdnvideo.ru/channel/TV1000_Rus_Kino_HD.m3u8
+#EXTINF: -1, Discovery Channel FHD
+http://edge05.beetv.kz/btv/SWM/discovery_hd/discovery_hd_1080p_5000kbps.m3u8
