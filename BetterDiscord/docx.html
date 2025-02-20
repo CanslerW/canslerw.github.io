@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация Discord Бота</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e2e, #2a2b3d);
+            background-size: 400% 400%;
+            animation: backgroundAnimation 15s ease infinite;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 25px;
+            background: rgba(54, 57, 63, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .command {
+            cursor: pointer;
+            background: #5865F2;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+            text-align: center;
+            display: inline-block;
+            width: auto;
+        }
+
+        .command:hover {
+            background: #4752C4;
+            transform: scale(1.05);
+        }
+
+        .command-info {
+            display: none;
+            margin-top: 15px;
+            padding: 20px;
+            background: rgba(79, 84, 92, 0.9);
+            border-radius: 8px;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            color: #b5b9c2;
+        }
+
+        .bold-text {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background-color: #333;
+            color: white;
+            border-radius: 12px;
+            padding: 5px 10px;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .hidefamq {
+            background-color: #2c2f36;
+            color: white;
+        }
+
+        .sang {
+            background-color: #1d1d1d;
+            color: white;
+        }
+
+        .items {
+            background-color: #1d1d1d;
+            color: white;
+        }
+
+        .command-text {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #444;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 16px;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .command-text img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+            width: 100%;
+            max-height: 400px; /* Устанавливаем максимальную высоту изображения */
+            object-fit: cover; /* Обеспечивает, чтобы изображение красиво вписывалось */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Документация</h1>
+        <p>Выберите команду, чтобы узнать подробности.</p>
+
+        <div class="command" onclick="toggleInfo('craft')">/крафт</div>
+        <div class="command" onclick="toggleInfo('postavka')">/поставка</div>
+        <div class="command" onclick="toggleInfo('bank_crime')">/банк_ограбили</div>
+        <div class="command" onclick="toggleInfo('bank_gos')">/банк_отбили</div>
+        <div class="command" onclick="toggleInfo('capt_win')">/капт_выиграли</div>
+        <div class="command" onclick="toggleInfo('capt_lose')">/капт_защитили</div>
+        <div id="postavka" class="command-info">
+            <p><strong class="bold-text">Описание:</strong> Команда <strong class="bold-text">/поставка</strong> используется для того, чтобы сообщить о том, что одна фракция перекрыла поставку другой фракции.</p>
+            <p><strong class="bold-text">Пример использования:</strong></p>
+            <div class="command-text">
+                <strong class="bold-text">/поставка</strong>
+                <span class="highlight sang">нападающий: Hide Famq</span>
+                <span class="highlight sang">гос. структура: SANG</span>
+                <span class="highlight items">предметы: 20.000 технических материалов</span>
+                <img src="https://i.imgur.com/OGMHdzB.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/поставка</strong>
+                <span class="highlight sang">нападающий: Hide Famq</span>
+                <span class="highlight sang">гос. структура: SANG</span>
+                <span class="highlight items">предметы: 4.000 технических материалов</span>
+                <span class="highlight items">кого_убили: Bester Famq</span>
+                <img src="https://i.imgur.com/vmCJl72.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/поставка</strong>
+                <span class="highlight sang">нападающий: Reyn FamQ</span>
+                <span class="highlight sang">гос. структура: The Ballas Gang</span>
+                <span class="highlight items">предметы: 4.000 технических материалов</span>
+                <span class="highlight items">с_кем_напали: Rose Famq</span>
+                <img src="https://i.imgur.com/MSNCGnU.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/поставка</strong>
+                <span class="highlight sang">нападающий: Reyn Famq</span>
+                <span class="highlight sang">гос. структура: FIB</span>
+                <span class="highlight items">предметы: 200 эпифринов, 200 активированного угля</span>
+                <span class="highlight items">с_кем_напали: Rose Famq</span>
+                <img src="https://i.imgur.com/fqcqB6C.png" alt="Description of the image" />
+            </div>
+            <p><strong class="bold-text">Что делает команда:</strong></p>
+            <ul>
+                <li>Сообщает о том, что одна фракция перекрыла поставку другой.</li>
+                <li>Указывает, какие предметы были на поставке.</li>
+                <li>Информирует о том, были ли убиты фракции в процессе нападения.</li>
+                <li>Показывает, с кем напала основная фракция.</li>
+            </ul>
+        </div>
+        <div id="craft" class="command-info">
+            <p><strong class="bold-text">Описание:</strong> Команда /крафт используется для того, чтобы сообщить о том, что одна фракция перекрыла крафт другой фракции.</p>
+            <p><strong class="bold-text">Пример использования:</strong></p>
+            <div class="command-text">
+                <strong class="bold-text">/крафт</strong>
+                <span class="highlight sang">нападающий: Hide Famq</span>
+                <span class="highlight sang">гос. структура: SANG</span>
+                <span class="highlight items">предметы: 750 ящиков с карабинными винтовками mk2</span>
+                <img src="https://i.imgur.com/fPJfTHV.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/крафт</strong>
+                <span class="highlight sang">нападающий: Hide Famq</span>
+                <span class="highlight sang">гос. структура: SANG</span>
+                <span class="highlight items">предметы: 750 ящиков с карабинными винтовками mk2</span>
+                <span class="highlight items">кого_убили: FIB, LSCSD</span>
+                <img src="https://i.imgur.com/BzUbTSP.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/крафт</strong>
+                <span class="highlight sang">нападающий: Reyn FamQ</span>
+                <span class="highlight sang">гос. структура: SANG</span>
+                <span class="highlight items">предметы: 171 ящиков с карабинными винтовками mk2</span>
+                <span class="highlight items">с_кем_напали: Rose Famq</span>
+                <img src="https://i.imgur.com/1AiBBQj.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/крафт</strong>
+                <span class="highlight sang">нападающий: Reyn Famq</span>
+                <span class="highlight sang">гос. структура: FIB</span>
+                <span class="highlight items">предметы: 200 эпифринов, 200 активированного угля</span>
+                <span class="highlight items">с_кем_напали: Rose Famq</span>
+                <span class="highlight items">кого_убили: The Ballas Gang</span>
+                <img src="https://i.imgur.com/fqcqB6C.png" alt="Description of the image" />
+            </div>
+            <p><strong class="bold-text">Что делает команда:</strong></p>
+            <ul>
+                <li>Сообщает о том, что одна фракция перекрыла крафт другой.</li>
+                <li>Указывает, какие предметы были на крафте.</li>
+                <li>Информирует о том, были ли убиты фракции в процессе нападения.</li>
+                <li>Показывает, с кем напала основная фракция.</li>
+            </ul>
+        </div>
+        <div id="bank_crime" class="command-info">
+            <p><strong class="bold-text">Описание:</strong> Команда <strong class="bold-text">/банк_ограбили</strong> используется для сообщения об успешном ограблении банка. Это позволяет зафиксировать, какая фракция или фракции совершили ограбление, и в какой именно банк был осуществлён налёт.</p>
+            <p><strong class="bold-text">Пример использования:</strong></p>
+            <div class="command-text">
+                <strong class="bold-text">/банк_ограбили</strong>
+                <span class="highlight sang">нападающий: Guerra Famq</span>
+                <span class="highlight items">номер: 4</span>
+                <img src="https://i.imgur.com/U5Lv10n.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/банк_ограбили</strong>
+                <span class="highlight sang">нападающий: Pinq Famq</span>
+                <span class="highlight items">номер: 5</span>
+                <span class="highlight sang">доп_фама: Torrese Famq</span>
+                <img src="https://i.imgur.com/xrwq5p3.png" alt="Description of the image" />
+            </div>
+            <p><strong class="bold-text">Что делает команда:</strong></p>
+            <ul>
+                <li>Отправляет сообщение в чат, информируя, какая фракция (или фракции) успешно ограбила банк.</li>
+                <li>Указывает номер банка, который был ограблен.</li>
+                <li>Если указана дополнительная фракция, то добавляется информация, что ограбление было совместным. Если фракция одна, то сообщение будет только о ней.</li>
+            </ul>
+        </div>
+        <div id="bank_gos" class="command-info">
+            <p><strong class="bold-text">Описание:</strong> Команда <strong class="bold-text">/банк_отбили</strong> используется для сообщения об успешном отражении ограбления банка. Она позволяет зафиксировать, какая государственная структура (или структуры) отбила ограбление, и какая фракция была нападающей.</p>
+            <p><strong class="bold-text">Пример использования:</strong></p>
+            <div class="command-text">
+                <strong class="bold-text">/банк_отбили</strong>
+                <span class="highlight sang">кто_отбил: FIB</span>
+                <span class="highlight sang">кто_напал: Dior Famq</span>
+                <span class="highlight items">номер: 3</span>
+                <img src="https://i.imgur.com/YmkyLmK.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/банк_отбили</strong>
+                <span class="highlight sang">кто_отбил: FIB</span>
+                <span class="highlight sang">кто_напал: Raze Famq</span>
+                <span class="highlight items">номер: 4</span>
+                <span class="highlight items">кто_еще_был_гос: SANG, LSCSD, LSPD</span>
+                <img src="https://i.imgur.com/obXFEyx.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/банк_отбили</strong>
+                <span class="highlight sang">кто_отбил: FIB</span>
+                <span class="highlight sang">кто_напал: Winx Famq</span>
+                <span class="highlight items">номер: 3</span>
+                <span class="highlight items">кто_еще_был_крайм: Hurricane Famq</span>
+                <img src="https://i.imgur.com/yNXU4YX.png" alt="Description of the image" />
+            </div>
+            <div class="command-text">
+                <strong class="bold-text">/банк_отбили</strong>
+                <span class="highlight sang">кто_отбил: LSCSD</span>
+                <span class="highlight sang">кто_напал: Bloodside Famq</span>
+                <span class="highlight items">номер: 5</span>
+                <span class="highlight items">кто_еще_был_гос: FIB, LSPD</span>
+                <span class="highlight items">кто_еще_был_крайм: Calogero Famq</span>
+                <img src="https://i.imgur.com/c2vPUlM.png" alt="Description of the image" />
+            </div>
+            <p><strong class="bold-text">Что делает команда:</strong></p>
+            <ul>
+                <li>Отправляет сообщение в чат, информируя, какая государственная структура (или структуры) отбила ограбление банка.</li>
+                <li>Указывает номер банка и фракцию, которая совершила попытку ограбления.</li>
+                <li>Если есть дополнительные гос. структуры или фракции, они добавляются в сообщение.</li>
+            </ul>
+        </div>
+        <div id="capt_lose" class="command-info">
+            <p><strong class="bold-text">Описание:</strong> Команда <strong class="bold-text">/капт_защитили</strong> предназначена для сообщений о защите территории (квадрата) одной фракцией от нападения другой фракцией. Она используется для информирования о том, какая фракция защищала определенный квадрат от нападения другой фракции.</p>
+            <p><strong class="bold-text">Пример использования:</strong></p>
+            <div class="command-text">
+                <strong class="bold-text">/капт_защитили</strong>
+                <span class="highlight sang">выиграла: Meraldo Famq</span>
+                <span class="highlight sang">квадрат: DH18</span>
+                <span class="highlight items">Проиграла: Bester Famq</span>
+                <img src="https://i.imgur.com/3Mxn8eJ.png" alt="Description of the image" />
+            </div>
+            <p><strong class="bold-text">Что делает команда:</strong></p>
+            <ul>
+                <li>Применяется для отображения сообщения о том, что фракция 1 успешно защитила квадрат 2 от нападения фракции 3.</li>
+                <li>Отправляет сообщение в указанный канал с готовым текстом, в который подставляются значения из параметров команды.</li>
+            </ul>
+        </div>
+        <div id="capt_win" class="command-info">
+            <p><strong class="bold-text">Описание:</strong> Команда <strong class="bold-text">/капт_выиграли</strong> используется для сообщения о том, какая фракция выиграла контроль над квадратом, отняв его у другой фракции. Это позволяет зафиксировать победу одной фракции в захвате территории.</p>
+            <p><strong class="bold-text">Пример использования:</strong></p>
+            <div class="command-text">
+                <strong class="bold-text">/капт_выиграли</strong>
+                <span class="highlight sang">выиграла: Meraldo Famq</span>
+                <span class="highlight sang">квадрат: DA1</span>
+                <span class="highlight items">Проиграла: Edem Famq</span>
+                <img src="https://i.imgur.com/POuOBwg.png" alt="Description of the image" />
+            </div>
+            <p><strong class="bold-text">Что делает команда:</strong></p>
+            <ul>
+                
+<li>Отправляет сообщение в чат, информируя, что фракция 1 выиграла квадрат 2 у фракции 3.</li>
+    <li>Это сообщение помогает зафиксировать победу одной фракции в захвате территории, а также отображает, кто именно проиграл этот квадрат.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let activeInfo = null;
+        function toggleInfo(id) {
+            if (activeInfo && activeInfo !== id) {
+                document.getElementById(activeInfo).style.display = 'none';
+            }
+            const element = document.getElementById(id);
+            element.style.display = (element.style.display === 'block') ? 'none' : 'block';
+            activeInfo = element.style.display === 'block' ? id : null;
+
+            // Прокрутка к элементу
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
