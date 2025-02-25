@@ -141,7 +141,7 @@
             </video>
         </div>
         
-        <a href="https://github.com/CanslerW/BetterDiscord_plugins/releases/download/later/FamqModer.plugin.js" class="btn" download>Скачать плагин</a>
+        <button class="btn" onclick="downloadPlugin()">Скачать плагин</button>
 
         <!-- Кнопка Документации -->
         <a href="https://canslerw.github.io/BetterDiscord/docx.html" class="documentation-btn" target="_blank">Документация</a>
@@ -151,6 +151,23 @@
     </div>
 
     <script>
+                function downloadPlugin() {
+            const url = "https://raw.githubusercontent.com/CanslerW/BetterDiscordPlugins/refs/heads/main/FamQPoster/FamqPoster.plugin.js";
+            const fileName = "FamqPoster.plugin.js";
+            
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const link = document.createElement("a");
+                    link.href = URL.createObjectURL(blob);
+                    link.download = fileName;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                })
+                .catch(error => console.error("Ошибка скачивания плагина:", error));
+        }
+
         const video = document.getElementById('video');
 
         video.addEventListener('mouseover', function() {
